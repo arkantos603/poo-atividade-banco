@@ -1,0 +1,18 @@
+let banco: Banco = new Banco();
+
+let conta1: Conta = new Conta("1111", 500);
+let conta2: Conta = new Conta("2222", 200);
+
+Adicionando as contas ao banco
+banco.inserir(conta1);
+banco.inserir(conta2);
+
+try {
+    Tentando transferir um valor maior do que o saldo da conta1
+    banco.transferir("1111", "2222", 600);
+    console.log("Transferência bem-sucedida.");
+} catch (error) {
+    console.error("Erro ao transferir, saldo insuficiente.", error.message);
+}
+
+A adição do tratamento de exceções melhora a robustez do código. No entanto, a confiabilidade da implementação depende de como essas exceções são tratadas em locais apropriados. O tratamento adequado de exceções permite que o programa lide com condições excepcionais de maneira controlada e, assim, aumenta a confiabilidade do código. 

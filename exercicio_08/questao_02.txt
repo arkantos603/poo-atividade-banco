@@ -1,0 +1,8 @@
+try-catch: Desempenho: O uso excessivo de blocos try-catch pode impactar o desempenho do código, principalmente se erros são esperados com frequência.
+Escopo: A declaração try-catch abrange um escopo amplo. Se um erro ocorrer dentro do bloco try, todos os erros serão capturados, tornando mais difícil distinguir entre diferentes tipos de erros.
+
+If/Else: Código repetitivo: Em casos onde a verificação de erros é necessária em várias partes do código, pode resultar em código repetitivo, o que pode levar a erros se a lógica de verificação não for consistente.
+Manutenção: Se a lógica de verificação precisar ser modificada, pode ser necessário fazer alterações em vários locais do código.
+
+Uso de tipos opcionais e tratamento explícito de erros: Ignorando erros: Pode haver situações em que os erros são ignorados, já que o retorno nulo pode não ser verificado adequadamente, levando a comportamentos inesperados.
+Código verboso: O tratamento explícito de erros usando tipos opcionais pode tornar o código mais verboso, especialmente se muitas funções precisarem retornar valores nulos para indicar erros.

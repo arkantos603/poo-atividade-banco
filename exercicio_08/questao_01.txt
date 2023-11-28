@@ -1,0 +1,75 @@
+Enumere os 3 tipos mais comuns de tratamento de erros e exemplifique com
+códigos seus ou pesquisados na internet.
+
+EXEMPLO 1
+Uso de if/else
+
+function verificarMaior(num1: number, num2: number): boolean {
+    return num1 > num2;
+}
+
+function compararNumeros(num1: number, num2: number): string {
+    if (verificarMaior(num1, num2)) {
+        return `${num1} é maior que ${num2}.`;
+    } else {
+        return `${num1} não é maior que ${num2}.`;
+    }
+}
+
+let resultado = compararNumeros(10, 2);
+console.log(resultado);
+
+let resultadoComErro = compararNumeros(5, 10);
+console.error(resultadoComErro);
+
+////////////////////////////////////
+
+EXEMPLO 2
+Uso de try-catch
+
+function verificarMaior(num1: number, num2: number): boolean {
+    return num1 > num2;
+}
+
+try {
+    let num1 = 10;
+    let num2 = 5;
+
+    if (verificarMaior(num1, num2)) {
+        console.log(`${num1} é maior que ${num2}.`);
+    } else {
+        throw new Error(`${num1} não é maior que ${num2}.`);
+    }
+} catch (erro) {
+    console.error("Erro:", erro.message);
+}
+
+////////////////////////////////////
+
+EXEMPLO 3
+Uso de tipos opcionais e tratamento explícito de erros com função
+
+function verificarMaior(num1: number, num2: number): boolean {
+    return num1 > num2;
+}
+
+function compararNumeros(num1: number, num2: number): string | null {
+    if (verificarMaior(num1, num2)) {
+        return `${num1} é maior que ${num2}.`;
+    } else {
+        console.error("Erro: Num1 não é maior que Num2.");
+        return null;
+    }
+}
+
+let resultado = compararNumeros(10, 2);
+if (resultado !== null) {
+    console.log(resultado);
+}
+
+let resultadoComErro = compararNumeros(5, 10);
+if (resultadoComErro !== null) {
+    console.error(resultadoComErro);
+} else {
+    console.error("Operação inválida.");
+}
